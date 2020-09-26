@@ -40,7 +40,7 @@ function getColor(level) {
 
 for (var i = 1; i < 47; ++i) {
   drawGeo(
-    "https://rawcdn.githack.com/sorabatake/article_population/population/master/" +
+    "https://rawcdn.githack.com/sorabatake/article_population/master/population/" +
       i +
       ".geojson"
   );
