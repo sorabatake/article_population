@@ -1,12 +1,10 @@
 function drawGeo(url) {
   $.ajax({
-    url,
+    url: url,
     type: "GET",
-    contentType: "application/json",
-    success(data) {
-      console.log(data);
+    success: function (data) {
       L.geoJSON(data, {
-        style(feature) {
+        style: function (feature) {
           return {
             fillColor: getColor(feature.properties.JINKO_LEVEL),
             fillOpacity: 0.2,
@@ -40,8 +38,10 @@ function getColor(level) {
   }
 }
 
-for (let i = 1; i < 47; ++i) {
+for (var i = 1; i < 47; ++i) {
   drawGeo(
-    `https://cdn.jsdelivr.net/gh/seito2/japan_population@latest/${i}.geojson`
+    "https://rawcdn.githack.com/sorabatake/article_population/population/master/" +
+      i +
+      ".geojson"
   );
 }
